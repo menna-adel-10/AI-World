@@ -1,3 +1,8 @@
+import { useState } from "react"
+import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi"
+import DarkMode from "./DarkMode";
+
+
 const NavLinks = [
   {
     id: 1,
@@ -22,9 +27,11 @@ const NavLinks = [
 ]
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const toggleMenu = () => setShowMenu(!showMenu);
   return (
     <div>
-      <div>
+      <div className="relative z-[9999] text-black dark:text-white">
         <div className="container py-2 md:py-0">
           <div className="flex justify-between items-center">
 
@@ -51,9 +58,23 @@ const Navbar = () => {
                         </li>
                       );
         })
-                  }
+                }
+                <DarkMode />
                 </ul>
               </nav>
+
+            <div className="md:hidden block">
+              <div className="flex items-center gap-4">
+                <DarkMode />
+              {
+                showMenu ? (
+                <HiMenuAlt1 onClick={toggleMenu} className="cursor-pointer" size={30} />
+                ) : (
+                    <HiMenuAlt3 onClick={toggleMenu} className="cursor-pointer" size={30}/>
+                ) 
+              }
+              </div>
+            </div>
             
           </div>
         </div>
