@@ -7,6 +7,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        parisienne: ["Parisienne", "cursive"]
+      },
       colors: {
         primary: "#00d1de",
         secondary: "#15ed3c",
