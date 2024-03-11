@@ -7,9 +7,6 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"]
-      },
       colors: {
         primary: "#00d1de",
         secondary: "#15ed3c",
